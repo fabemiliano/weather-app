@@ -1,4 +1,6 @@
 import React, { useContext, useState } from 'react';
+
+// I used the FontAwesome lib to get some icons for the application
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -6,11 +8,14 @@ import {
 } from './styles/styles';
 import { ApplicationContext } from '../context/context';
 
+// this function will get the timezone value returned from the api response and transform into
+// the current date and time at the city chosen;
 function getTime(timezone) {
   const now = new Date();
   let hours = now.getHours() + timezone / 3600 + 3;
   let minutes = now.getMinutes();
   minutes = (minutes < 10) ? `0${minutes}` : minutes;
+  // the date show change depending on the curret time
   if (hours > 24) {
     hours -= 24;
     now.setDate(now.getDate() + 1);
@@ -26,6 +31,8 @@ function getTime(timezone) {
   return { date: `${day}/${month}/${year}`, time: `${hours}:${minutes}` };
 }
 
+// this function will render the search bar to choose a different city to show
+// this search bar will only appear when clicking the choose a different city button
 function renderModal(setCity, inputCity, setInputCity, setShowModal) {
   return (
     <Modal>

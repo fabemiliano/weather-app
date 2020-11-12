@@ -4,6 +4,8 @@ import {
 } from './styles/styles';
 import { ApplicationContext } from '../context/context';
 
+// this is a simple component that render some informations returned from the api
+// using the styled Components
 function MoreDetails() {
   const { weatherInfo } = useContext(ApplicationContext);
   return (

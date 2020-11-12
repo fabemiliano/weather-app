@@ -1,3 +1,5 @@
+// this object was created by me to show a different background for every different weather
+
 const weatherPics = [
   {
     weather: 'Clouds',

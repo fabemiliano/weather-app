@@ -46,4 +46,27 @@ border: none;
 border-radius: ${(props) => props.borderRadius}
 `;
 
-export const Modal = styled.div``;
+// the styled component can be styled like sass, which make it even easier to use
+export const Modal = styled.div`
+p {
+  color: #fff;
+  font-size: 1.5rem;
+}
+div {
+  border: 1px solid #000;
+  input {
+  background: transparent;
+  border: none;
+  outline: none;
+  }
+}
+button {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+}
+
+
+`;
